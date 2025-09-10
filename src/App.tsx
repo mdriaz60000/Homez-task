@@ -1,3 +1,4 @@
+import Featured from "./pages/Featured/Featured"
 import Banner from "./pages/HeroSection/Banner/Banner"
 
 
@@ -9,6 +10,7 @@ function App() {
     <>
    
     <Banner />
+    <Featured />
  <p className="text-primary">hhfdhh uaeur</p>
     </>
   )
