@@ -1,3 +1,5 @@
+import Banner from "./pages/HeroSection/Banner/Banner"
+
 
 
 function App() {
@@ -5,6 +7,8 @@ function App() {
 
   return (
     <>
+   
+    <Banner />
  <p className="text-primary">hhfdhh uaeur</p>
     </>
   )
