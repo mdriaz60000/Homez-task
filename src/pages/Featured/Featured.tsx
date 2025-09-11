@@ -80,7 +80,7 @@ const Featured = () => {
             </Card>
           ))}
         </div>
-        <div className=" w-full mx-auto items-center pb-24">
+        <div className="-pt-4  pb-24">
           <p className=" text-4xl text-center"><span className="text-9xl items-center">.</span>.....</p>
         </div>
       </section>
