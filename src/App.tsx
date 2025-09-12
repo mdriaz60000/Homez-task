@@ -4,6 +4,7 @@ import BayAndSell from "./pages/BayAndSell/BayAndSell"
 import Blog from "./pages/Blog/Blog"
 import Deals from "./pages/Deals/Deals"
 import Featured from "./pages/Featured/Featured"
+import Footer from "./pages/Footer/Footer"
 import Banner from "./pages/HeroSection/Banner/Banner"
 import RealtorPeople from "./pages/Realtor/RealtorPeople"
 import RealtorProperty from "./pages/Realtor/RealtorProperty"
@@ -11,8 +12,6 @@ import RealtorProperty from "./pages/Realtor/RealtorProperty"
 
 
 function App() {
-
-
   return (
     <>
    
@@ -25,6 +24,7 @@ function App() {
     <RealtorPeople />
     <Deals />
     <Blog />
+    <Footer />
     </>
   )
 }

@@ -1,69 +1,61 @@
-# React + TypeScript + Vite
+# Homez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Vite app configured with Tailwind CSS and ready for Vercel deploy.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js 18+ (LTS recommended)
+- npm 9+
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `npm run dev`: start local dev server
+- `npm run build`: type-check then build to `dist`
+- `npm run preview`: preview production build
+- `npm run lint`: run ESLint
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Local Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. Install dependencies: `npm install`
+2. Start dev server: `npm run dev`
+3. Open `http://localhost:5173`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Deploy on Vercel
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This repo includes `vercel.json` for SPA routing.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### One‑click (recommended)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Create a new project on Vercel and import this repo.
+2. Framework Preset: "Vite" (or "Other" with settings below).
+3. Build Command: `npm run build`
+4. Output Directory: `dist`
+5. Root directory: project root (where `package.json` lives)
+6. Click Deploy.
+
+### Via Vercel CLI
+
+1. Install CLI: `npm i -g vercel`
+2. Login: `vercel login`
+3. First deploy (and set): `vercel --prod`  
+   - When asked:
+     - Build Command: `npm run build`
+     - Output Directory: `dist`
+     - Override settings: No (because `vercel.json` exists)
+4. Subsequent deploys: `vercel --prod`
+
+### SPA Routing
+
+`vercel.json` rewrites all non-asset routes to `index.html`, ensuring React Router works on page refresh.
+
+## Environment Variables
+
+Add any required vars in Vercel Project Settings → Environment Variables. Locally, create `.env` files as needed and restart dev server.
+
+## Project Structure
+
+- `src/`: app source
+- `public/`: static assets copied as‑is
+- `dist/`: production build output
+- `vite.config.ts`: Vite config with `@` alias to `src/`
+- `vercel.json`: Vercel build and routing config
