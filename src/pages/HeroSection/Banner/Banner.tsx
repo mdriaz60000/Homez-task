@@ -1,20 +1,24 @@
-import Container from "@/components/shared/Container";
-import heroImage from "../../../assets/Section → Main → Section.png"
+import heroImage from "../../../assets/Section → Main → Section.png";
 import Navbar from "../Navbar/Navbar";
 
 const Banner = () => {
-    return (
-        <div className=" relative">
+  return (
+    <div className="relative w-full">
+      {/* Background Image */}
+      <img
+        src={heroImage}
+        alt="Hero"
+        className="w-full h-auto object-cover"
+      />
 
-            <img src={heroImage} alt="" width={"100%"} height={"900px"} />
-<Container>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full">
-            <Navbar/>
-          </div>
-</Container>
-
-        </div>
-    );
+      {/* Navbar Overlay */}
+      <div className="absolute top-0 left-0 right-0">
+        
+          <Navbar />
+        
+      </div>
+    </div>
+  );
 };
 
 export default Banner;

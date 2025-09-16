@@ -14,7 +14,7 @@ import RealtorProperty from "./pages/Realtor/RealtorProperty"
 function App() {
   return (
     <>
-   
+  
     <Banner />
     <Featured />
     <Apartment />

@@ -7,6 +7,7 @@ import t5 from "../../assets/apperment/type5.jpg.png";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GoArrowUpRight } from "react-icons/go";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ApartmentType = () => {
   const apartmentTypes = [
@@ -55,9 +56,21 @@ const ApartmentType = () => {
           </Card>
         ))}
       </section>
-              <div className=" ">
-          <p className=" text-4xl text-center"><span className="text-9xl items-center">.</span>.....</p>
-        </div>
+          <div className="flex justify-center items-center gap-2 pt-12 pb-24">
+            <Button variant="outline" size="icon">
+              <ChevronLeft />
+            </Button>
+            <Button variant="default" className="bg-primary text-white">
+              1
+            </Button>
+            <Button variant="outline">2</Button>
+            <Button variant="outline">3</Button>
+    
+            <Button variant="outline">4</Button>
+            <Button variant="outline" size="icon">
+              <ChevronRight />
+            </Button>
+          </div>
     </Container>
   );
 };

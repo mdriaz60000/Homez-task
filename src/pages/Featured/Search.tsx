@@ -21,7 +21,7 @@ const PropertySearch = () => {
   return (
     <div className="">
       {/* Search Interface */}
-      <div className="relative -mt-24 ">
+      <div className="relative md:-mt-24 ">
         <div className="">
           {/* Navigation Tabs */}
           <div className="  ">
